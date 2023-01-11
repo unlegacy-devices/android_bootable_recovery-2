@@ -579,6 +579,7 @@
 					<conditions>
 						<condition var1="tw_has_boot_slots" var2="1"/>
 						<condition var1="tw_has_repack_tools" var2="1"/>
+						<condition var1="tw_no_flash_current_twrp" var2="0"/>
 					</conditions>
 					<data variable="tw_auto_reflashtwrp"/>
 				</listitem>
@@ -3771,6 +3772,7 @@
 					<conditions>
 						<condition var1="tw_has_boot_slots" var2="1"/>
 						<condition var1="tw_has_repack_tools" var2="1"/>
+						<condition var1="tw_no_flash_current_twrp" var2="0"/>
 					</conditions>
 					<data variable="tw_auto_reflashtwrp"/>
 				</listitem>
@@ -4332,6 +4334,7 @@
 					<conditions>
 						<condition var1="tw_has_boot_slots" var2="1"/>
 						<condition var1="tw_has_repack_tools" var2="1"/>
+						<condition var1="tw_no_flash_current_twrp" var2="0"/>
 					</conditions>
 					<actions>
 						<action function="set">tw_repack_kernel=0</action>

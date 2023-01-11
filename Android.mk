@@ -210,6 +210,10 @@ endif
 
 LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
 
+ifeq ($(TW_NO_FLASH_CURRENT_TWRP),true)
+    LOCAL_CFLAGS += -DTW_NO_FLASH_CURRENT_TWRP
+endif
+
 #ifeq ($(TARGET_RECOVERY_UI_LIB),)
 #  LOCAL_SRC_FILES += default_device.cpp
 #else
