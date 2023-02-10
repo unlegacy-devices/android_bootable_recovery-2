@@ -587,23 +587,6 @@ LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
 LOCAL_SRC_FILES := $(LOCAL_MODULE)
 include $(BUILD_PREBUILT)
 
-ifeq ($(TW_INCLUDE_CRYPTO), true)
-    ifneq ($(TW_CRYPTO_USE_SYSTEM_VOLD),)
-        ifneq ($(shell test $(PLATFORM_SDK_VERSION) -ge 28; echo $$?),0)
-            # Prebuilt vdc_pie for pre-Pie SDK Platforms
-            include $(CLEAR_VARS)
-            LOCAL_MODULE := vdc_pie
-            LOCAL_MODULE_TAGS := eng
-            LOCAL_MODULE_CLASS := RECOVERY_EXECUTABLES
-            LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
-            LOCAL_SRC_FILES := vdc_pie-$(TARGET_ARCH)
-            include $(BUILD_PREBUILT)
-        endif
-    endif
-endif
-
-ifneq (,$(filter $(TW_INCLUDE_REPACKTOOLS) $(TW_INCLUDE_RESETPROP) $(TW_INCLUDE_LIBRESETPROP), true))
-    ifeq ($(wildcard external/magisk-prebuilt/Android.mk),)
         $(warning Magisk prebuilt tools not found!)
         $(warning Please place https://github.com/TeamWin/external_magisk-prebuilt)
         $(warning into external/magisk-prebuilt)
