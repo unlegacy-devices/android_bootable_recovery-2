@@ -224,7 +224,7 @@ int res_create_surface_png(const char* name, gr_surface* pSurface) {
         goto exit;
     }
 
-#if defined(RECOVERY_ABGR) || defined(RECOVERY_BGRA)
+#if defined(RECOVERY_ABGR) || defined(RECOVERY_BGRA) || defined(RECOVERY_ABGR)
     png_set_bgr(png_ptr);
 #endif
 
