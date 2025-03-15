@@ -530,7 +530,7 @@ static void loopTimer(int input_timeout_ms)
 
 		// This is really 2 or 30 times per second
 		// As long as we get events, increase the timeout so we can catch up with input
-		long timeout = got_event ? 500000000 : 33333333;
+		long timeout = got_event ? 500000000 : (1.0 / TW_FRAMERATE * 1000000000);
 
 		if (diff.tv_sec || diff.tv_nsec > timeout)
 		{
